@@ -5,9 +5,10 @@ let cartas = []
 let draw = document.querySelector('#draw')
 let sort = document.querySelector('#sort')
 let contenedor = document.querySelector('.contenedor')
+let cartasOrdenas = document.querySelector ('.cartasOrdenas')
 
 draw.addEventListener('click', generarCartas)
-sort.addEventListener('click', generarCartas)
+sort.addEventListener('click', ordenarcartas)
 
 
 function generaricono() {
@@ -65,7 +66,27 @@ function generarCartas() {
   console.log(cartas)
 }
 
+function ordenarcartas () {
+  bubbleSort ([...cartas])
+  
+}
 
 
+function bubbleSort(array) {
+  const length = array.length;
+  for (let i = 0; i < length - 1; i++) {
+    for (let j = 0; j < length - i - 1; j++) {
+      if (array[j] > array[j + 1]) {
+       
+        const temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
 
+      } const temp = array[j].innerHTML;
+      array[j].innerHTML = cards[j + 1].innerHTML;
+      array[j + 1].innerHTML = temp;
 
+    }
+  }
+  return array;
+}
