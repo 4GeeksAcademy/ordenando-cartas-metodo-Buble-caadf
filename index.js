@@ -23,10 +23,15 @@ function generarnumero() {
 
 function generarCartas() {
   let numeroCartas = parseInt(document.getElementById('amountcards').value);
-  for (let i = 0; i < numeroCartas; i++) {
-    let icono = iconos [generaricono()]
-    let num = numeros [generarnumero()]
 
+  contenedor.innerHTML = "";
+  cartas = [] 
+
+  for (let i = 0; i < numeroCartas; i++) {
+    let icono = iconos[generaricono()]
+    let num = numeros[generarnumero()]
+    let carta = { icono: icono, num: num}
+    cartas.push(carta)
     let card = document.createElement('div')
     card.classList.add('card')
 
@@ -57,8 +62,8 @@ function generarCartas() {
     }
 
   }
+  console.log(cartas)
 }
-
 
 
 
