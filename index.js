@@ -4,39 +4,56 @@ let cartas = []
 
 let draw = document.querySelector('#draw')
 let sort = document.querySelector('#sort')
-let contenedor = document.querySelector('.contendor')
+let contenedor = document.querySelector('.contenedor')
 
 draw.addEventListener('click', generarCartas)
 sort.addEventListener('click', generarCartas)
 
-function generarCartas () {
-let card = document.createElement("div");
-card.className = "card";
-let iconoArriba = document.createElement("div");
-iconoArriba.className = "icono-arriba";
-let iconoAbajo = document.createElement("div");
-iconoAbajo.className = "icono-abajo";
-let cardnumero = document.createElement("div");
-cardnumero.className = "numero";
+function generarCartas() {
+  let card = document.createElement('div')
+  card.classList.add('card')
+
+  let iconoarriba = document.createElement('div')
+  iconoarriba.classList.add('icono-arriba')
+  iconoarriba.innerHTML = '♣'
+
+  let numero = document.createElement('div')
+  numero.classList.add('numero')
+  numero.innerHTML = 'A'
+
+  let iconoabajo = document.createElement('div')
+  iconoabajo.classList.add('icono-abajo')
+  iconoabajo.innerHTML = '♣'
+
+
+  contenedor.appendChild(card)
+  card.appendChild(iconoarriba)
+  card.appendChild(numero)
+  card.appendChild(iconoabajo)
 
 
 
-iconoArriba.classList.add()
-iconoAbajo.classList.add()
-cardnumero.classList.add()
-
-contenedor.appenChild()
 }
 
+let numeroCartas = parseInt(document.getElementbyId('amountcards').value);
+for (let i = 0; i < numeroCartas; i++) {
 
-function generariconos() {
+  function generaricono() {
     let numero = Math.floor(Math.random() * iconos.length);
     return numero;
   }
 
-  function generarnumeros() {
-    let numero = Math.floor(Math.random() * iconos.length);
+  function generarnumero() {
+    let numero = Math.floor(Math.random() * numeros.length);
     return numero;
   }
 
-  
+}
+
+if (icono == "♦" || icono == "♥") {
+  iconoarriba.style.color = "red";
+  iconoabajo.style.color = "red";
+} else {
+  iconoarriba.style.color = "black";
+  iconoabajo.style.color = "black";
+}
