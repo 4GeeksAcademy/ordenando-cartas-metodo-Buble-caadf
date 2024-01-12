@@ -1,7 +1,9 @@
 body {
     background-color: green;
 }
-
+.contenedor {
+  display:flex;
+}
 .card {
     display: flex;
     margin-top: 50px;
