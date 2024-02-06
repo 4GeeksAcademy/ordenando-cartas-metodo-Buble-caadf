@@ -5,7 +5,7 @@ let cartas = []
 let draw = document.querySelector('#draw')
 let sort = document.querySelector('#sort')
 let contenedor = document.querySelector('.contenedor')
-let cartasOrdenas = document.querySelector ('.cartasOrdenas')
+let cartasOrdenadas = document.querySelector ('.cartasOrdenadas')
 
 draw.addEventListener('click', generarCartas)
 sort.addEventListener('click', ordenarcartas)
